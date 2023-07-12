@@ -1,0 +1,22 @@
+# Site settings
+title: Adhy Suryadi
+subtitle: "Coretan kisah sebuah kehidupan"
+header-img: img/home-bg.jpg
+image: img/home-bg.jpg
+copyright_name: Adhy Suryadi
+description: "Coretan kisah sebuah kehidupan, berbagi dengan sesama tentang pengalaman hidup."
+url: "https://adhysuryadi.com"
+author: Adhy Suryadi
+twitter_username: adhysuryadiii
+github_username:  KompiAjaib
+facebook_username:  adhysuryadiii
+email_username:  kompiajaib@gmail.com
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+paginate: 5
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+
+gems: [jekyll-paginate, jekyll-feed, jekyll-sitemap]
