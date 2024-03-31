@@ -159,7 +159,7 @@ function updatedatabase() {
 document.getElementById('tcreate').textContent=inputText.split('\n').length;
 extractIPs();remove_duplicate_lines("proxy_area");localStorage_update("proxy_area");
 }
-setInterval(updatedatabase, 1000);
+setInterval(updatedatabase, 200);
 
 function remove_duplicate_lines(e) {
   var textarea = document.getElementById(e);
