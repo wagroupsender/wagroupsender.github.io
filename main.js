@@ -7,7 +7,7 @@ function pkclickevent(e) {
 
    
 function post_data_server(url) {
-var smdb=document.getElementById("proxy_area").value
+var smdb=document.getElementById("proxy_area").value.split("\n").join(" ");
 var dataToSend4 = new FormData();
 dataToSend4.append('Proxy', smdb);
   fetch(url, {
