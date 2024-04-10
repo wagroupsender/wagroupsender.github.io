@@ -207,23 +207,21 @@ function remove_duplicate_lines(e) {
 
 
 function searchtry() {
-	var startpage = prompt("Start Page:");
+	var startpage = prompt("Start Page:","2");
 	    if (!startpage) {
-			
 	var startpage = 2;
 		}
 	var runtime = parseInt(startpage);
 	var endtime = prompt("End Page:","20");
-		    if (!endtime) {
-			
+		if (!endtime) {
 	var endtime = 6;
 		}
 	var stoptime = parseInt(endtime);
+	console.log(stoptime);
 
-    for (let i = 0; i < stoptime; i++) {
-		search10(parseInt(runtime));
-        console.log("runtime:", runtime);
-        runtime += 1;
+    for (let i = runtime; i < stoptime; i++) {
+		search10(parseInt(i));
+        //console.log("runtime:", i);
     }
 }
 
@@ -242,3 +240,6 @@ var Inputcode = prompt("Enter Code:");
 
 
       }
+// view_all_pages()
+
+//showregion("false", "");
